@@ -6,23 +6,22 @@
 class Alire < Formula
   desc "Package manager and toolchain installer for Ada and SPARK"
   homepage "https://alire.ada.dev"
-  version "2.1.1"
   license "GPL-3.0-only"
-
-  on_macos do
-    on_arm do
-      url "https://github.com/alire-project/alire/releases/download/v#{version}/alr-#{version}-bin-aarch64-macos.zip"
-      sha256 "2c4867bfff3b95ecd9d846df460a52983d2b0072808b341f8fa5d82494fb309e"
-    end
-    on_intel do
-      url "https://github.com/alire-project/alire/releases/download/v#{version}/alr-#{version}-bin-x86_64-macos.zip"
-      sha256 "d3e16cdfaf0cfb2da62853b79b62910189fdca9d5fddc5c3ac5974ffc7d9544b"
-    end
-  end
 
   livecheck do
     url :stable
     strategy :github_latest
+  end
+
+  on_macos do
+    on_arm do
+      url "https://github.com/alire-project/alire/releases/download/v2.1.1/alr-2.1.1-bin-aarch64-macos.zip"
+      sha256 "2c4867bfff3b95ecd9d846df460a52983d2b0072808b341f8fa5d82494fb309e"
+    end
+    on_intel do
+      url "https://github.com/alire-project/alire/releases/download/v2.1.1/alr-2.1.1-bin-x86_64-macos.zip"
+      sha256 "d3e16cdfaf0cfb2da62853b79b62910189fdca9d5fddc5c3ac5974ffc7d9544b"
+    end
   end
 
   def install
